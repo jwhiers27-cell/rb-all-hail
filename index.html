@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Independent coverage of Valdosta State Blazers football, baseball, and basketball.">
+  <title>Blazer Sports Wire | Independent Blazers Coverage</title>
+  <style>
+    :root {
+      --red: #c8102e;
+      --black: #151515;
+      --gray: #f2f2f2;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--gray);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--white);
+      padding: 24px 6%;
+      border-bottom: 5px solid var(--red);
+    }
+
+    .brand {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin: 0;
+    }
+
+    .tagline { color: #dddddd; margin: 4px 0 18px; }
+
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover { color: #ff7188; }
+
+    .notice {
+      background: #fff4d6;
+      padding: 10px 6%;
+      font-size: .85rem;
+    }
+
+    main { max-width: 1100px; margin: auto; padding: 28px 20px; }
+
+    .lead {
+      background: var(--white);
+      padding: clamp(24px, 5vw, 48px);
+      border-left: 6px solid var(--red);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: .8rem;
+    }
+
+    h2 { line-height: 1.2; }
+
+    .lead h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 10px 0; }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .sport {
+      background: var(--white);
+      padding: 24px;
+      border-top: 4px solid var(--red);
+    }
+
+    .sport h3 { margin-top: 0; }
+
+    .label {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 4px 9px;
+      font-size: .75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: var(--black);
+      color: #dddddd;
+      padding: 24px 6%;
+      margin-top: 24px;
+      font-size: .85rem;
+    }
+
+    footer p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="brand">BLAZER SPORTS WIRE</p>
+    <p class="tagline">Your independent source for Blazers sports coverage.</p>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#football">Football</a>
+      <a href="#baseball">Baseball</a>
+      <a href="#basketball">Basketball</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <div class="notice">
+    Independent publication. Not affiliated with or endorsed by Valdosta State University.
+  </div>
+
+  <main id="home">
+    <section class="lead">
+      <span class="eyebrow">Blazers coverage</span>
+      <h2>Every Game. Every Story. Blazers.</h2>
+      <p>
+        Independent news, game previews, recaps, analysis, and features
+        covering Valdosta State athletics.
+      </p>
+      <p>Our coverage of the Blazers starts here.</p>
+    </section>
+
+    <h2>Explore the Sports</h2>
+    <section class="sections">
+      <article class="sport" id="football">
+        <span class="label">Football</span>
+        <h3>Blazers Football</h3>
+        <p>Game previews, postgame recaps, roster news, and season analysis.</p>
+      </article>
+
+      <article class="sport" id="baseball">
+        <span class="label">Baseball</span>
+        <h3>Blazers Baseball</h3>
+        <p>Series previews, game recaps, player features, and team updates.</p>
+      </article>
+
+      <article class="sport" id="basketball">
+        <span class="label">Basketball</span>
+        <h3>Blazers Basketball</h3>
+        <p>Game coverage, player features, previews, and analysis.</p>
+      </article>
+    </section>
+
+    <section id="about" class="lead" style="margin-top: 28px;">
+      <h2>About Blazer Sports Wire</h2>
+      <p>
+        We are an independent sports publication covering Valdosta State
+        Blazers athletics. Our goal is to provide accurate, thoughtful,
+        and engaging coverage for fans.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Blazer Sports Wire</strong></p>
+    <p>Independent coverage of Valdosta State athletics.</p>
+    <p>Not an official Valdosta State University website.</p>
+  </footer>
+</body>
+</html>
