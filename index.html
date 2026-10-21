@@ -4,177 +4,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Independent coverage of Valdosta State Blazers football, baseball, and basketball.">
-  <title>Red & Black All Hail | Independent Blazers Coverage</title>
+  <meta name="description" content="Independent news, analysis, and coverage of Valdosta State Blazers athletics.">
+  <title>Red & Black All Hail | Blazers Athletics</title>
   <style>
     :root {
       --red: #c8102e;
-      --black: #151515;
-      --gray: #f2f2f2;
+      --dark-red: #970b22;
+      --black: #111111;
+      --gray: #f3f3f3;
       --white: #ffffff;
+      --muted: #666666;
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--black);
       background: var(--gray);
+      color: var(--black);
       line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      background: var(--red);
+      color: white;
+      padding: 7px 5%;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
     header {
       background: var(--black);
-      color: var(--white);
-      padding: 24px 6%;
+      color: white;
+      padding: 24px 5% 0;
       border-bottom: 5px solid var(--red);
     }
 
-    .brand {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin: 0;
+    .masthead {
+      max-width: 1200px;
+      margin: auto;
+      padding-bottom: 20px;
     }
 
-    .tagline { color: #dddddd; margin: 4px 0 18px; }
+    .brand {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
 
-    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    .brand span { color: var(--red); }
+
+    .tagline {
+      margin: 8px 0 0;
+      color: #cccccc;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      max-width: 1200px;
+      margin: auto;
+    }
 
     nav a {
-      color: var(--white);
+      color: white;
       text-decoration: none;
-      font-weight: bold;
+      padding: 15px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-bottom: 3px solid transparent;
     }
 
-    nav a:hover { color: #ff7188; }
-
-    .notice {
-      background: #fff4d6;
-      padding: 10px 6%;
-      font-size: .85rem;
+    nav a:hover, nav a:focus {
+      background: #242424;
+      border-bottom-color: var(--red);
     }
 
-    main { max-width: 1100px; margin: auto; padding: 28px 20px; }
+    .disclaimer {
+      background: #fff1f3;
+      border-bottom: 1px solid #edc4cb;
+      padding: 9px 5%;
+      text-align: center;
+      font-size: 12px;
+      color: #54202a;
+    }
 
-    .lead {
-      background: var(--white);
-      padding: clamp(24px, 5vw, 48px);
-      border-left: 6px solid var(--red);
-      margin-bottom: 28px;
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px 50px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 3px solid var(--black);
+      margin: 34px 0 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      padding-bottom: 9px;
+      font-size: 21px;
+      text-transform: uppercase;
+      letter-spacing: -.5px;
+    }
+
+    .section-heading span {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      background: var(--black);
+      color: white;
+      padding: clamp(26px, 5vw, 60px);
+      border-left: 7px solid var(--red);
+      position: relative;
     }
 
     .eyebrow {
-      color: var(--red);
-      font-weight: 800;
+      color: #ff526e;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: .8rem;
     }
 
-    h2 { line-height: 1.2; }
+    .hero h2 {
+      max-width: 780px;
+      margin: 12px 0;
+      font-size: clamp(32px, 6vw, 62px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
 
-    .lead h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 10px 0; }
+    .hero p {
+      max-width: 650px;
+      color: #dddddd;
+      font-size: 16px;
+    }
 
-    .sections {
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--red);
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .button:hover { background: var(--dark-red); }
+
+    .sports-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .sport {
-      background: var(--white);
+    .sport-card {
+      background: white;
+      border-bottom: 4px solid var(--red);
       padding: 24px;
-      border-top: 4px solid var(--red);
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
     }
 
-    .sport h3 { margin-top: 0; }
+    .sport-card .number {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
 
-    .label {
-      display: inline-block;
-      background: var(--red);
-      color: white;
-      padding: 4px 9px;
-      font-size: .75rem;
-      font-weight: bold;
+    .sport-card h3 {
+      margin: 8px 0;
+      font-size: 23px;
       text-transform: uppercase;
+    }
+
+    .sport-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .latest {
+      background: white;
+      padding: 24px;
+    }
+
+    .story {
+      padding: 18px 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .story:first-child { padding-top: 0; }
+    .story:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .story h3 { margin: 5px 0; font-size: 19px; }
+    .story p { margin: 5px 0; color: var(--muted); font-size: 14px; }
+
+    .story-label {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .about {
+      background: white;
+      padding: 26px;
+      border-left: 5px solid var(--red);
     }
 
     footer {
       background: var(--black);
-      color: #dddddd;
-      padding: 24px 6%;
-      margin-top: 24px;
-      font-size: .85rem;
+      color: white;
+      padding: 32px 5%;
     }
 
-    footer p { margin: 6px 0; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer strong { font-size: 20px; }
+    footer p { color: #cccccc; font-size: 13px; }
+
+    @media (max-width: 700px) {
+      .sports-grid { grid-template-columns: 1fr; }
+      nav a { padding: 12px 10px; font-size: 11px; }
+      .hero h2 { letter-spacing: -1px; }
+      main { padding: 22px 14px 35px; }
+    }
   </style>
 </head>
 <body>
+  <div class="topbar">Independent College Sports Coverage</div>
+
   <header>
-    <p class="brand">RED & BLACK ALL HAIL</p>
-    <p class="tagline">Your independent source for Blazers sports coverage.</p>
+    <div class="masthead">
+      <h1 class="brand">R & B <span>ALL HAIL</span></h1>
+      <p class="tagline">The stories behind the Blazers</p>
+    </div>
     <nav aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#football">Football</a>
       <a href="#baseball">Baseball</a>
       <a href="#basketball">Basketball</a>
+      <a href="#latest">Latest News</a>
       <a href="#about">About</a>
     </nav>
   </header>
 
-  <div class="notice">
-    Independent publication. Not affiliated with or endorsed by Valdosta State University.
+  <div class="disclaimer">
+    R & B All Hail is an independent publication and is not affiliated with or endorsed by Valdosta State University.
   </div>
 
   <main id="home">
-    <section class="lead">
-      <span class="eyebrow">Blazers coverage</span>
-      <h2>Every Game. Every Story. Blazers.</h2>
+    <section class="hero">
+      <span class="eyebrow">Your Blazers. Your Coverage.</span>
+      <h2>Every Game.<br>Every Story.</h2>
       <p>
-        Independent news, game previews, recaps, analysis, and features
-        covering Valdosta State athletics.
+        Independent news, game previews, recaps, player features, and analysis
+        covering Valdosta State Blazers athletics.
       </p>
-      <p>Our coverage of the Blazers starts here.</p>
+      <a class="button" href="#sports">Explore Coverage</a>
     </section>
 
-    <h2>Explore the Sports</h2>
-    <section class="sections">
-      <article class="sport" id="football">
-        <span class="label">Football</span>
-        <h3>Blazers Football</h3>
-        <p>Game previews, postgame recaps, roster news, and season analysis.</p>
+    <div class="section-heading" id="sports">
+      <h2>Sports Coverage</h2>
+      <span>Red &amp; Black</span>
+    </div>
+
+    <section class="sports-grid">
+      <article class="sport-card" id="football">
+        <span class="number">01 / GRIDIRON</span>
+        <h3>Football</h3>
+        <p>Game previews, postgame recaps, player spotlights, and season analysis.</p>
+        <a href="#latest">Explore football coverage →</a>
       </article>
 
-      <article class="sport" id="baseball">
-        <span class="label">Baseball</span>
-        <h3>Blazers Baseball</h3>
+      <article class="sport-card" id="baseball">
+        <span class="number">02 / DIAMOND</span>
+        <h3>Baseball</h3>
         <p>Series previews, game recaps, player features, and team updates.</p>
+        <a href="#latest">Explore baseball coverage →</a>
       </article>
 
-      <article class="sport" id="basketball">
-        <span class="label">Basketball</span>
-        <h3>Blazers Basketball</h3>
-        <p>Game coverage, player features, previews, and analysis.</p>
+      <article class="sport-card" id="basketball">
+        <span class="number">03 / COURT</span>
+        <h3>Basketball</h3>
+        <p>Game coverage, player features, previews, and basketball analysis.</p>
+        <a href="#latest">Explore basketball coverage →</a>
       </article>
     </section>
 
-    <section id="about" class="lead" style="margin-top: 28px;">
-      <h2>About Red & Black All Hail</h2>
+    <div class="section-heading" id="latest">
+      <h2>Latest Headlines</h2>
+      <span>Newsroom</span>
+    </div>
+
+    <section class="latest">
+      <article class="story">
+        <span class="story-label">Coming Soon · Football</span>
+        <h3>Football Coverage Is Coming to R & B All Hail</h3>
+        <p>Look for previews, recaps, and analysis throughout the season.</p>
+      </article>
+
+      <article class="story">
+        <span class="story-label">Coming Soon · Baseball</span>
+        <h3>Inside the Blazers Baseball Season</h3>
+        <p>Follow upcoming series, player performances, and team developments.</p>
+      </article>
+
+      <article class="story">
+        <span class="story-label">Coming Soon · Basketball</span>
+        <h3>Blazers Basketball: Season Coverage</h3>
+        <p>Check back for game reports, previews, and player features.</p>
+      </article>
+    </section>
+
+    <div class="section-heading" id="about">
+      <h2>About the Publication</h2>
+    </div>
+
+    <section class="about">
+      <h3>Independent. Focused. Blazers.</h3>
       <p>
-        We are an independent sports publication covering Valdosta State
-        Blazers athletics. Our goal is to provide accurate, thoughtful,
-        and engaging coverage for fans.
+        Red & Black All Hail is an independent sports publication dedicated to
+        covering Valdosta State athletics with thoughtful reporting, accurate
+        information, and stories for fans.
+      </p>
+      <p>
+        This is an independent fan-media project, not an official university
+        website. University names and team references are used to identify
+        the subject of coverage.
       </p>
     </section>
   </main>
 
   <footer>
-    <p><strong>Red & Black All Hail</strong></p>
-    <p>Independent coverage of Valdosta State athletics.</p>
-    <p>Not an official Valdosta State University website.</p>
+    <div class="footer-inner">
+      <strong>R & B ALL HAIL</strong>
+      <p>Independent coverage of Valdosta State Blazers athletics.</p>
+      <p>Not affiliated with or endorsed by Valdosta State University.</p>
+      <p>© 2026 Red & Black All Hail</p>
+    </div>
   </footer>
 </body>
 </html>
